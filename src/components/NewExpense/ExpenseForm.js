@@ -43,7 +43,7 @@ function ExpenceForm(props) {
       // eta na banaleo holo, just "enteredDate" ta modify korte hoto, individual useState use korle
       title: userInput.enteredTitle,
       date: new Date(userInput.enteredDate),
-      amount: userInput.enteredAmount,
+      amount: +userInput.enteredAmount, // by + we enforce a number conversion
     }
 
     // console.log(expenseData)
