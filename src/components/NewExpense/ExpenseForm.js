@@ -47,8 +47,10 @@ function ExpenceForm(props) {
     }
 
     // console.log(expenseData)
-    props.onSaveExpenseData(expenseData)
-    setUserInput({ enteredTitle: '', enteredAmount: '', enteredDate: '' })
+    if (expenseData.title.trim().length > 0 && expenseData.amount > 0) {
+      props.onSaveExpenseData(expenseData)
+      setUserInput({ enteredTitle: '', enteredAmount: '', enteredDate: '' })
+    }
   }
 
   const onClickCancel = () => {
