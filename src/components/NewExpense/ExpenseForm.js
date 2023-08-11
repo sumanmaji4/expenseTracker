@@ -51,6 +51,10 @@ function ExpenceForm(props) {
     setUserInput({ enteredTitle: '', enteredAmount: '', enteredDate: '' })
   }
 
+  const onClickCancel = () => {
+    props.stopEditing()
+  }
+
   return (
     <form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
@@ -86,6 +90,7 @@ function ExpenceForm(props) {
         </div>
       </div>
       <div className='new-expense__actions'>
+        <button onClick={onClickCancel}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
